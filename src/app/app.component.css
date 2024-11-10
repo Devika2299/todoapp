@@ -1,0 +1,74 @@
+
+.app{
+position: absolute;
+left: 900px;
+top:100px;
+color:blue
+}
+
+.b {
+position:absolute;
+  width: 300px;
+   left:800px;
+top:150px;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+
+.savebox{
+position:absolute;
+padding: 50px auto;
+left:900px;
+top:220px;
+width: 200px;
+height: 100px;
+color: red;
+}
+
+
+.getbox{
+  position:absolute;
+  padding: 50px auto;
+  left:980px;
+  top:220px;
+  width: 200px;
+  height: 100px;
+color: red;
+
+  }
+
+  .tablee{
+
+   position: absolute;
+    top: 300px;
+    left: 500px;
+    width: 50%;
+    height: 200px;
+    color: black;
+    background-color:lightcoral;
+    border: 2px solid black;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+
+    }
+
+
+
+.delete{
+background-color: red;
+}
+
+.finished{
+background-color: green;
+}
+
+.save{
+background-color: aqua;
+}
+
+.getask{
+background-color: aquamarine;
+}
+

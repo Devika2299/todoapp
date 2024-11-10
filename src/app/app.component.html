@@ -1,0 +1,174 @@
+<!-- <h2 class="app">TO DO APP</h2>
+
+<form>
+  <input [(ngModel)]="inputdata" type="text" name="n" class="b" />
+
+  <div class="savebox">
+    <button type="submit" class="save" (click)="buttonclick()">Save</button>
+  </div>
+
+  
+</form>
+
+<table class="tablee">
+
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Todo item</th>
+      <th scope="col">Status</th>
+      <th scope="col">Actions</th>
+    </tr>
+    
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data; let j=index" >
+      <th scope="row">{{j+1}}</th>
+      <td>{{ item.taskname }}</td>
+      <td *ngIf="item.status">Finished</td>
+      <td *ngIf="!item.status">In Progress</td>
+    
+      <td class="k">
+        <button type="submit" class="delete" (click)="deleteclick(j)">Delete</button>
+        <button type="submit" class="finished" (click)="finishtodo(item.id)">Finished</button>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>  -->
+
+<!-- <div class="container text-center">
+<h2>TODO APP</h2>
+
+<form>
+  <input [(ngModel)]="inputdata" type="text" name="n" />
+
+  <div >
+    <button type="submit"   class="btn btn-primary" (click)="buttonclick()">Save</button>
+  </div>
+</form>
+
+<table class="table table-bordered">
+  <thead>
+    <tr >
+      <th>No.</th>
+      <th>Task Name</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let item of data; let j=index" >
+      <th scope="row">{{j+1}}</th>
+      <td>{{ item.taskname }}</td>
+      <td *ngIf="item.status">Finished</td>
+      <td *ngIf="!item.status">In Progress</td>
+    
+      <td class="k">
+        <button type="submit"  class="btn btn-danger" (click)="deleteclick(j)">Delete</button>
+        <button type="submit" class="btn btn-success" (click)="finishtodo(item.id)">Finished</button>
+      </td>
+    </tr>
+    
+  </tbody>
+</table> 
+</div> -->
+
+<!-- <div class="container text-center">
+  <h2>TODO APP</h2>
+  
+  <form>
+    <input [(ngModel)]="inputdata" type="text" name="n" />
+  
+    <div >
+      <button type="submit"   class="btn btn-primary" (click)="buttonclick()">Save</button>
+    </div>
+  </form>
+  <div class="row">
+    <div class="col">No.</div>
+    <div class="col">Task item</div>
+    <div class="col">Status</div>
+    <div class="col">Actions</div>
+  </div>
+  <div class="row" *ngFor="let item of data; let j=index" >
+    <div class="col">{{j+1}}</div>
+    <div class="col">{{ item.taskname }}</div>
+    <div class="col" *ngIf="item.status">Finished</div>
+    <div class="col" *ngIf="!item.status">In Progress</div>
+     
+  <div class="col"><button type="submit"  class="btn btn-danger" (click)="deleteclick(j)">Delete</button>
+  <button type="submit" class="btn btn-success" (click)="finishtodo(item.id)">Finished</button> </div> -->
+
+<!-- <div class="container text-center">
+  <h2>TODO APP</h2>
+
+  <form>
+    <input [(ngModel)]="inputdata" type="text" name="n" />
+
+    <div>
+      <button type="submit" class="btn btn-primary" (click)="buttonclick()">
+        Save
+      </button>
+    </div>
+  </form>
+  <div class="row">
+    <div class="col-sm-3">No.</div>
+    <div class="col-sm-3">Task item</div>
+    <div class="col-sm-3">Status</div>
+    <div class="col-sm-3">Actions</div>
+  </div>
+  <div class="row" *ngFor="let item of data; let j = index">
+    <div class="col-sm-3">{{ j + 1 }}</div>
+    <div class="col-sm-3">{{ item.taskname }}</div>
+    <div class="col-sm-3" *ngIf="item.status">Finished</div>
+    <div class="col-sm-3" *ngIf="!item.status">In Progress</div>
+
+    <div class="col">
+      <button type="submit" class="btn btn-danger" (click)="deleteclick(j)"> Delete</button>
+      <button type="submit" class="btn btn-success"(click)="finishtodo(item.id)">Finished</button>
+    </div>
+  </div>
+</div>  -->
+
+
+
+<div [ngStyle]="{ background: 'black', height: '100vh', width: '100vw' }">
+  <div class="container text-center">
+    <h2 [ngStyle]="{ color: 'white' }">TODO APP</h2>
+
+    <form>
+      <input [(ngModel)]="inputdata" type="text" name="n" />
+      <button type="submit" class="btn btn-primary" (click)="buttonclick()">
+        <i class="bi bi-plus"></i>
+      </button>
+      <button type="button" class="btn btn-danger" (click)="clearall()"><i class="bi bi-file-excel-fill"></i></button>
+     
+    </form>
+
+    <div class="row text-white">
+      <div class="col-sm-3">No.</div>
+      <div class="col-sm-3">Task item</div>
+      <div class="col-sm-3">Status</div>
+      <div class="col-sm-3">Actions</div>
+      
+    </div>
+
+    <div [ngStyle]="{ color: 'white' }"  class="row" *ngFor="let item of data; let j = index">
+      <div class="col-sm-3">{{ j + 1 }}</div>
+      <div class="col-sm-3"[ngStyle]="{ 'text-decoration': item.status ? 'line-through' : 'none' }"> {{ item.taskname }}</div>
+      <div class="col-sm-3"[ngClass]="{'text-success': item.status,  'text-warning': !item.status  }"
+      [ngStyle]="{ 'font-weight': item.status ? 'bold' : 'normal' }">  
+      {{ item.status ? "Finished" : "In Progress" }}</div>
+     <div class="col"> <button [ngClass]="['btn', 'btn-danger']" (click)="deleteclick(j)"><i class="bi bi-trash3"></i></button>
+         <button class="btn" [ngClass]="{'btn-success':item.status,'btn-warning':!item.status}" (click)="finishtodo(item.id)">
+          <i [ngClass]="item.status ? 'bi bi-check':'bi bi-x-circle'"></i>
+        </button>
+      </div>
+  </div>
+  </div>
+   </div>
+
+
+
+<router-outlet></router-outlet>
